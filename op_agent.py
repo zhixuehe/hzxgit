@@ -23,7 +23,7 @@ class Agent:
         self.profile_list = []
         self.hour_budget = 0.5     # 初始的hour_budegt
         self.begin = True
-        self.max_bid_amount = 18000   # 调整
+        self.max_bid_amount = 18000
         self.logger = op_log.init_log(self.ad_set_id)
 
     def start(self):
@@ -32,8 +32,8 @@ class Agent:
 
     def spend_control(self):
         # 5分钟进行检查一次,出价调整最快10分钟一次
-        # 如果roas大于一般情况的最大值，则视为表现好，故提出价，没有上限次数，只要好就提
-        # 如果roas小于一般情况的最小值，则视为表现差，故降出价，当下降次数过多，则视为极其不好，将其暂时杀死，处于冰封状态
+        # 如果roas大于一般情况的最大值，则视为表现好，故提出价，没有上限次数，只要好就提价，
+        # 如果roas小于一般情况的最小值，则视为表现差，故降出价，
         # 如果roas处于设定区间内，则视为表现一般，则考虑花费控制，引入控制系数e
         # 在表现一般和表现差的时候，时段预算会时刻作用着，当时段实际花费超了，则关闭adset，这种关闭，会在下个时段重新气启动
         tz = pytz.timezone('Asia/Shanghai')

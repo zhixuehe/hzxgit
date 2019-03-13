@@ -1,0 +1,12 @@
+This code is for the ad serving control of the game on Facebook.
+(1) The code is divided into two categories, from the name tag to
+see if it has an op prefix;
+(2) The high-frequency control for the adset without the operation
+prefix is ​​to provide the DAILY_BUDGET and _amount modification
+control according to the feedback quickly, and the control strength
+cannot trigger the re-learning of the advertisement. The ultimate goal
+is to divide the daset into a stable delivery state through a strategy,
+request a reorganization target that is not performing well, and then
+enter the system again;
+(3) With the operation prefix to enter the stable delivery, here is
+just some strategies to control dailiy_budget.
